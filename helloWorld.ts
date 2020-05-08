@@ -18,6 +18,10 @@ const app = new Application();
 app.use(router.routes());
 app.use(router.allowedMethods());
 
-const PORT = 5000;
-console.log(`Listening on port 🚀 ${PORT} 🚀`);
-await app.listen({ port: PORT });
+try {
+	const PORT = 5000;
+	console.log(`Listening on port 🚀 ${PORT} 🚀`);
+	await app.listen({ port: PORT });
+} catch(error) {
+	console.log(`Uh Oh something went wrong!`);
+}
